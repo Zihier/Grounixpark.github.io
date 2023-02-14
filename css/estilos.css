@@ -1,0 +1,485 @@
+:root{
+    --amarillo: #FFFF00;
+    --negro: #000000;
+    --rojo: #FF0000;
+    --titulos: 'Baloo 2', cursive;
+    --parrafos: 'Montserrat', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+/*Estilos globales*/
+
+h1, h2, h3{
+    font-family: var(--titulos);
+}
+
+p, a{
+    font-family: var(--parrafos);
+}
+
+.ocultar{
+    display: none;
+}
+
+.contenedor{
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 95%;
+}
+
+.btn{
+    padding: 1rem 3rem;
+    font-weight: bold;
+    font-family: var(--parrafos);
+    font-size: 2rem;
+    border: none;
+    background-color: white;
+}
+
+.bordes{
+    border: 3px solid var(--amarillo);
+}
+@media(min-width: 768px) {
+    .bordes{
+        display: inline-block;
+        margin-top: 2rem;
+    }
+}
+
+.bordes:hover{
+    background-color: var(--amarillo);
+    color: white;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.azul{
+    background-color: var(--rojo);
+}
+
+.azul:hover{
+    background-color: white;
+    color: var(--amarillo);
+    transition: all .3s ease-in-out;
+}
+
+@keyframes desplazamiento {
+
+    /*desplazamiento inicial*/
+
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/*encabezado*/
+
+.encabezado{
+    background-image: url('../img/curtis-hystad-SzdDyV-y1RI-unsplash.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 70rem;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+@media(min-width: 768px) {
+    .encabezado{
+        background-attachment: fixed;
+    }
+}   
+
+.encabezado::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: -1;
+}
+
+.logo h2{
+    font-size: 3rem;
+    color: var(--rojo);
+}
+
+.logo h2 span{
+    color: var(--negro);
+}
+
+.contenido-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.navegacion{
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 100%;
+    animation: desplazamiento .5s ease-in-out;
+}
+
+@media(min-width: 768px) {
+    .ocultar{
+        display: inline;
+    }
+}
+
+.navegacion a{
+    display: block;
+    font-size: 3rem;
+    padding: 1.1rem;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color .3s ease-in-out;
+}
+
+.navegacion a:hover{
+    background-color: var(--rojo);
+    color: white;
+}
+
+@media(min-width: 768px) {
+    .navegacion a{
+        display: inline;
+    }
+}
+
+@media(min-width: 768px) {
+    .navegacion{
+        position: relative;
+        top: unset;
+        width: auto;
+        background-color: unset;
+        animation: unset;
+    }
+}
+
+.hamburguesa span{
+    width: 5rem;
+    height: 1rem;
+    border: 3px solid #fff;
+    background-color: var(--negro);
+    display: block;
+}
+
+@media(min-width: 768) {
+    .contenido-encabezado{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 85%;
+    }
+    .contenido-encabezado .formulario-encabezado{
+        flex: 0 0 calc (50% - 1rem);
+    }
+}
+
+.texto-encabezado h1{
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    padding-top: 8rem;
+}
+@media(min-width: 768px) {
+    .texto-encabezado h1{
+        font-size: 7rem;
+        text-align: left;
+        padding-top: 0;
+    }
+}
+
+
+/*ventajas*/
+
+@media(min-width: 768px) {
+    .contenido-ventajas{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+    }
+}
+
+.ventajas{
+    padding: 5rem;
+    background-color: #3D91CC;
+}
+
+.ventaja{
+    color: var(--amarillo);
+    text-align: center;
+}
+
+.ventaja i{
+    font-size: 4rem;
+}
+
+.ventaja h3{
+    font-size: 2.5rem;
+}
+
+.ventajap{
+    font-size: 2rem;
+}
+
+/*seccion sobre nosotros*/
+
+.nosotros h2{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--rojo);
+}
+@media(min-width: 768px) {
+    .nosotros h2{
+        font-size: 5rem;
+    }
+}
+
+.contenido-nosotros{
+    background-image: url('../img/somruthai-keawjan-IU50vDwlhEc-unsplash.jpg');
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    background-size: cover;
+    background-position: center center;
+}
+
+@media(min-width: 768px) {
+    .contenido-nosotros{
+        grid-template-columns: repeat(2,1fr);
+        background-attachment: fixed;
+    }
+}
+
+.texto-nosotros{
+    grid-row: 2/3;
+    background-color: var(--negro);
+}
+
+@media(min-width: 768px) {
+    .texto-nosotros{
+        padding: 5rem;
+    }
+}
+
+.texto-nosotros h3{
+    font-size: 2.5rem;
+    color: var(--amarillo);
+    text-align: center;
+}
+
+.texto-nosotros p{
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .texto-nosotros p{
+        text-align: left;
+    }
+}
+
+/*Seccion servicios*/
+
+.servicios{
+    padding-top: 5rem;
+}
+.servicios h2{
+    font-size: 5rem;
+    text-align: center;
+    color: var(--amarillo);
+}
+@media(min-width: 768px) {
+    .contenido-servicio{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 4rem;
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio i{
+    background-color: #3D91CC;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo);
+    font-size: 3rem;
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    transition: all .3s ease-in-out;
+}
+
+.servicio h3{
+    font-size: 2.2rem;
+    color: var(--amarillo);
+}
+.servicio p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+    .servicio p{
+        text-align: left;
+    }
+}
+
+@media(min-width: 768px) {
+    .servicio:hover{
+        cursor: pointer;
+    }
+
+    .servicio:hover .fas{
+        background-color: var(--negro);
+        color: var(--amarillo);
+    }
+}
+
+/*seccion contacto*/
+
+.contacto{
+    padding-top: 5rem;
+}
+
+.contacto h2{
+    text-align: center;
+    color: var(--rojo);
+    font-size: 5rem;
+}
+@media(min-width: 768) {
+    .contenido-contacto{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.informacion-contacto{
+    background-image: url('../img/lightning-mcqueen-cars-movie-wallpaper-preview.jpg');
+    background-size: cover;
+    height: auto;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media(min-width: 768px) {
+    .informacion-contacto{
+        height: 100vh;
+    }
+}
+
+.informacion-contacto::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: -1;
+}
+
+.informacion-contacto h3{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.informacion-contacto p{
+    font-size: 2rem;
+}
+
+.informacion-contacto h3, .informacion-contacto p{
+    color: white;
+}
+
+.formulario-contacto{
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+
+.input-contacto label{
+    color: white;
+    font-family: var(--parrafos);
+    display: block;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.input-contacto input{
+    padding: 1.2rem 1rem;
+    font-family: var(--parrafos);
+}
+
+.input-contacto input, .input-contacto textarea{
+    width: 100%;
+    outline: none;
+}
+
+.input-contacto textarea{
+    resize: none;
+}
+
+.input-contacto input[type="submit#"]{
+    width: auto;
+    padding: 1rem 3rem;
+    transition: background-color .3s ease-in-out;
+}
+
+.input-contacto input[type="submit"]:hover{
+    background-color: white;
+    counter-reset: var(--negro);
+}
+
+.footer .logo h2 .footer p{
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
